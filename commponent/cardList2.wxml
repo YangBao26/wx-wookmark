@@ -1,0 +1,7 @@
+<template name="cardList2">
+    <view class="row-list">
+        <view class="img-bg flex">
+            <image mode="widthFix" src="{{item.poster}}" />
+        </view>
+    </view>
+</template>

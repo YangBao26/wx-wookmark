@@ -1,0 +1,19 @@
+<import src="/commponent/cardList2.wxml"></import>
+<scroll-view class="list-div" scroll-y="{{true}}" 
+bindscrolltolower="handleScrollLower" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="onScrollRefresh">
+    <view id="left" class="good-left">
+        <block wx:for="{{leftList}}" wx:key="index">
+            <template is="cardList2" data="{{item}}"></template>
+        </block>
+    </view>
+    <view id="right" class="good-left">
+        <block wx:for="{{rightList}}" wx:key="index">
+            <template is="cardList2" data="{{item}}"></template>
+        </block>
+    </view>
+    <view class="more-box">
+        <text wx:if="{{!isLoad}}">{{total <= page * limit || total==0?Texts[0]:Texts[1]}}</text>
+        <text wx:else>{{Texts[2]}}</text>
+    </view>
+    <!-- <More style="float:left" page="{{page}}" total="{{total}}" limit="{{limit}}" /> -->
+</scroll-view>
